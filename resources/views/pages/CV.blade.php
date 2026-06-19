@@ -12,16 +12,15 @@
     <section class="min-h-screen flex items-center justify-center px-6">
         <div class="max-w-5xl mx-auto text-center">
 
-            <img src="https://via.placeholder.com/200"
-                 alt="Profile"
+            <img src="{{ asset('images/profile.jpg') }}" alt="Profile"
                  class="w-48 h-48 rounded-full mx-auto border-4 border-blue-500 shadow-lg">
 
             <h1 class="text-5xl font-bold mt-6">
-                Nama Lengkap
+                Nabil Abiyyu Amru Ramadhan
             </h1>
 
             <p class="text-xl text-slate-300 mt-2">
-                Web Developer | Laravel Developer | Student
+                Web Developer || Student
             </p>
 
             <p class="max-w-2xl mx-auto mt-6 text-slate-400">
@@ -34,7 +33,7 @@
                    class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700">
                     Hubungi Saya
                 </a>
-
+<br>
                 <a href="#project"
                    class="border border-blue-500 px-6 py-3 rounded-lg hover:bg-blue-500">
                     Lihat Project
@@ -62,41 +61,6 @@
         </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="py-20">
-        <div class="max-w-5xl mx-auto px-6">
-
-            <h2 class="text-4xl font-bold text-center mb-10">
-                Skills
-            </h2>
-
-            <div class="grid md:grid-cols-4 gap-6">
-
-                <div class="bg-slate-800 p-6 rounded-xl text-center">
-                    <h3 class="font-bold">HTML</h3>
-                    <p class="text-slate-400">Advanced</p>
-                </div>
-
-                <div class="bg-slate-800 p-6 rounded-xl text-center">
-                    <h3 class="font-bold">CSS</h3>
-                    <p class="text-slate-400">Intermediate</p>
-                </div>
-
-                <div class="bg-slate-800 p-6 rounded-xl text-center">
-                    <h3 class="font-bold">PHP</h3>
-                    <p class="text-slate-400">Intermediate</p>
-                </div>
-
-                <div class="bg-slate-800 p-6 rounded-xl text-center">
-                    <h3 class="font-bold">Laravel</h3>
-                    <p class="text-slate-400">Intermediate</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
     <!-- EDUCATION -->
     <section class="py-20 bg-slate-800">
         <div class="max-w-5xl mx-auto px-6">
@@ -109,21 +73,21 @@
 
                 <div class="bg-slate-700 p-6 rounded-xl">
                     <h3 class="font-bold text-xl">
-                        Universitas / Sekolah
+                        SMKN 1 Jenangan
                     </h3>
 
                     <p class="text-slate-300">
-                        2023 - Sekarang
+                        2024 - Sekarang
                     </p>
                 </div>
 
                 <div class="bg-slate-700 p-6 rounded-xl">
                     <h3 class="font-bold text-xl">
-                        SMK / SMA
+                        SMPN 1 Ponorogo
                     </h3>
 
                     <p class="text-slate-300">
-                        2020 - 2023
+                        2021 - 2024
                     </p>
                 </div>
 
@@ -137,29 +101,19 @@
         <div class="max-w-5xl mx-auto px-6">
 
             <h2 class="text-4xl font-bold text-center mb-10">
-                Project
+                Pengalaman
             </h2>
 
             <div class="grid md:grid-cols-2 gap-6">
 
                 <div class="bg-slate-800 p-6 rounded-xl">
                     <h3 class="text-2xl font-bold">
-                        Sistem Absensi
+                        Juara 1 Lomba Scratch Tingkat Sekolah.
                     </h3>
 
                     <p class="text-slate-400 mt-3">
-                        Aplikasi absensi berbasis Laravel dan MySQL.
-                    </p>
-                </div>
-
-                <div class="bg-slate-800 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold">
-                        Toko Online
-                    </h3>
-
-                    <p class="text-slate-400 mt-3">
-                        Website penjualan produk dengan fitur login,
-                        keranjang, dan checkout.
+                        Perlombaan pemrograman menggunakan Scratch
+                        yang diadakan oleh Universitas Negeri Malang.
                     </p>
                 </div>
 
@@ -177,9 +131,9 @@
             </h2>
 
             <div class="space-y-3 text-slate-300">
-                <p>Email : nama@email.com</p>
-                <p>WhatsApp : 08xxxxxxxxxx</p>
-                <p>GitHub : github.com/username</p>
+                <p>Email : amru8763@gmail.com</p>
+                <p>WhatsApp : 085147425827</p>
+                <p>GitHub : github.com/nabilabiyyu365-coder</p>
             </div>
 
         </div>
