@@ -16,3 +16,4 @@ class appKeterampilan extends Model
         'flag',
     ];
 }
+   
