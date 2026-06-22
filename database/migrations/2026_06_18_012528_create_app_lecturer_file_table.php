@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('lecture_id');
             $table->string('name', 250);
             $table->text('nilai');
+            $table->timestamps();
         });
     }
 

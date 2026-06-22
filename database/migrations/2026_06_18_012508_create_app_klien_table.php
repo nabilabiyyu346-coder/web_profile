@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('gambar', 250)->unique();
             $table->string('link', 250)->unique();
             $table->integer('flag');
+            $table->timestamps();
         });
     }
 

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('controller_id', 50);
             $table->string('action_id', 50);
             $table->string('name', 50);
+            $table->timestamps();
         });
 
     }

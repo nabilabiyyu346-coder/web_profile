@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_keterampilan', 250);
             $table->integer('nilai');
             $table->integer('flag');
+            $table->timestamps();
         });
     }
 

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('migration', function(Blueprint $table) {
             $table->string('version', 180)->unique();
             $table->integer('apply_time');
+            $table->timestamps();
         });
     }
 

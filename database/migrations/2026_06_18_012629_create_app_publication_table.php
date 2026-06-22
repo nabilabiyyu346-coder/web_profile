@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('author', 250);
             $table->text('title');
             $table->string('year', 4)->unique();
+            $table->timestamps();
         });
     }
 

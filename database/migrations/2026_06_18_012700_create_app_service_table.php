@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('icon', 250)->unique();
             $table->string('name', 250);
             $table->text('content')->unique();
+            $table->timestamps();
         });
     }
 

@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('app_lecturer', function(Blueprint $table) {
             $table->id();
             $table->string('mata_kuliah', 250);
-            $table->foreignId('jurusan_id');
+            $table->foreignId('jurusan_id')->constrained('app_jurusan')->onDelete('cascade');
             $table->year('tahun', 4);
             $table->integer('flag');
+            $table->timestamps();
         });
     }
 

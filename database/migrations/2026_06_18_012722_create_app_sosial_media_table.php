@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('icon', 50)->unique();
             $table->string('link', 150)->unique();
             $table->integer('flag');
+            $table->timestamps();
         });
     }
 

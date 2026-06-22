@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('web_config_group', function(Blueprint $table) {
             $table->id();
             $table->string('name', 200);
+            $table->timestamps();
         });
     }
 

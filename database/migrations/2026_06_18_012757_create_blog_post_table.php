@@ -23,6 +23,8 @@ return new class extends Migration
             $table->foreignId('id_author');
             $table->timestamps();
             $table->integer('flag');
+            $table->foreignId('id_kategori')->constrained('blog_kategori')->onDelete('cascade');
+            $table->timestamp('published_at')->nullable();
         });
     }
 

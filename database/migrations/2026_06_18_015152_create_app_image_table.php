@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name', 250);
             $table->text('keterangan')->nullable();
             $table->text('nilai');
+            $table->timestamps();
         });
     }
 

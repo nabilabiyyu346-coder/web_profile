@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_kategori', 250);
             $table->integer('flag');
+            $table->timestamps();
         });
     }
 

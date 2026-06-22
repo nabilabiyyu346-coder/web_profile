@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('link', 250)->unique();
             $table->string('id_author', 3)->unique();
             $table->integer('flag')->unique();
+            $table->timestamps();
         });
     }
 

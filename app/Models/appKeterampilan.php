@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class appSkill extends Model
+class appKeterampilan extends Model
 {
     // nama tabel di database
-    protected $table = 'app_skills';
+    protected $table = 'app_keterampilan';
 
     // boleh diisi pakai create() atau save()
     protected $fillable = [
-        'name',
-        'description',
-        'proficiency',
+        'nama_keterampilan',
+        'nilai',
+        'flag',
     ];
 }

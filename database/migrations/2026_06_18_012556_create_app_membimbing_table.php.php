@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('judul');
             $table->text('abstrak');
             $table->year('tahun', 4);
+            $table->timestamps();
         });
     }
 

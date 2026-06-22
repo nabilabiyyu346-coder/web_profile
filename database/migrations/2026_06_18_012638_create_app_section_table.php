@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('compact_data', 150)->unique();
             $table->integer('order')->unique();
             $table->integer('status')->unique();
+            $table->timestamps();
         });
     }
 
