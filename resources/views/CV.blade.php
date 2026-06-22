@@ -6,24 +6,30 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <navbar class=" bg-gray-600 px-8 py-4 flex justify-between items-center">
+    <navbar class="px-8 py-8 flex justify-between items-center">
         <span class="text-xl font-bold tracking-wider ">Iqbal.CV</span>
-        <div class="space-x-6 text-sm font-medium">
+        <div class="text-lg font-bold space-x-7 ">
             <a href="" class="hover:text-blue-400 transition">Tentang</a>
-            <a href="" class="hover:text-blue-400 transition">Pengalaman</a>
+            <a href="" class="hover:text-blue-400 transition">Contact</a>
             <a href="" class="hover:text-blue-400 transition">Keahlian</a>
-            <a href="" class="hover:text-blue-400 transition">Bimbingan</a>
+            <a href="" class="hover:text-blue-400 transition">Prestasi</a>
         </div>
     </navbar>
+    <header class="pt-8 pb-16 px-6 max-w-4xl mx-auto text-center md:text-left md:flex md:items-center md:gap-10">
+        <div class="flex-shrink-0 mb-6 md:mb-0">
+            <!-- <img src="{{ asset('image/Test_PP.jpg') }}" alt="Moch. Iqbal Hafidz P." class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover"> -->
+            <img src="{{ asset('image/TES2.jpg') }}" alt="Moch. Iqbal Hafidz P." class="w-full h-70 max-w-sm mx-auto object-cover rounded-lg">
+        </div>
+
+        <div>
+            <h1 class="text-3xl md:text-5xl font-bold md:font-extrabold mt-6 mb-4 uppercase tracking-tight md:tracking-wide"><span class="text-blue-500">mochammad iqbal</span><br> hafidz pratama</h1>
+            <p class="text-lg font-medium mb-2 leading-relaxed">Saya merupakan siswa <span class="text-blue-500">SMKN 1 Jenangan Ponorogo</span> jurusan <span class="text-blue-500">Rekayasa Perangkat Lunak (RPL).</span> Memiliki pengalaman mengerjakan
+                    proyek perangkat lunak secara individu maupun tim, serta memiliki motivasi tinggi untuk belajar, beradaptasi, dan
+                    mengembangkan kemampuan di dunia kerja melalui kegiatan PKL.</p>
+        </div>
+    </header>
     <tbody>
         <div class="text xl font-bold px-8 py-2">
-
-            <span>About me</span>
-            <ul>
-                <li>Saya merupakan siswa SMKN 1 Jenangan Ponorogo jurusan Rekayasa Perangkat Lunak. Memiliki pengalaman mengerjakan
-                    proyek perangkat lunak secara individu maupun tim, serta memiliki motivasi tinggi untuk belajar, beradaptasi, dan
-                    mengembangkan kemampuan di dunia kerja melalui kegiatan PKL.</li>
-            </ul><br>
 
             <span>Contact</span>
             <ul class="flex items-center justify-between">
@@ -34,11 +40,9 @@
                 </div>
             </ul><br>
 
-            <span>Pendidikan</span>
-            <ul>
-                <li>MTsN 2 Ponorogo 2021-2024 SMKN 1 Jenangan</li>
-                <li>Ponorogo Jurusan RPL2024 - Sekarang</li>
-            </ul><br>
+<p>MTsN 2 Ponorogo 2021-2024<br>
+                SMKN 1 Jenangan Ponorogo Jurusan RPL 2024 - Sekarang
+            </p>
 
             <span>Prestasi</span>
             <ul>
@@ -67,7 +71,6 @@
             </ul><br>
         </div>
     </tbody>
-
 
   </body>
 </html>
