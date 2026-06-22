@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class appProject extends Model
+class appPortofolio extends Model
 {
     // nama tabel di database
     protected $table = 'app_portofolio';

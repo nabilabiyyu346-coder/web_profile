@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('app_lecturer_link', function(Blueprint $table) {
             $table->id();
-            $table->foreignId('lecture_id')->constrained('app_lecturer')->onDelete('cascade');
+            $table->foreignId('lecture_id');
             $table->string('name', 250);
             $table->string('link')->unique();
             $table->timestamps();

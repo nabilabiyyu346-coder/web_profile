@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('roles_menu', function(Blueprint $table) {
             $table->id();
-            $table->foreignId('role_id')->constrained();
-            $table->foreignId('menu_id')->constrained();
+            $table->foreignId('role_id');
+            $table->foreignId('menu_id');
             $table->timestamps();
         });
     }
