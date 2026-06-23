@@ -43,19 +43,19 @@
         </div>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- EXPERIENCE(education) -->
     <section>
         <div>
 
             <h2>
-                {{ $texts['education_title'] ?? $experiences->firstWhere('name', 'education')?->content ?? 'Pendidikan' }}
+                {{ $texts['experience_title'] ?? $experiences->firstWhere('name', 'experience')?->content ?? 'Pendidikan' }}
             </h2>
 
             <div>
-                @forelse($education as $edu)
+                @forelse($experiences as $exp)
                     <div>
-                        <h3>{{ $edu->name }}</h3>
-                        <p>{{ $edu->value }}</p>
+                        <h3>{{ $exp->name }}</h3>
+                        <p>{{ $exp->start_year }} - {{ $exp->end_year }}</p>
                     </div>
                 @empty
                     <p>Tidak ada data pendidikan.</p>
@@ -76,7 +76,7 @@
             <div>
                 @forelse($portofolio as $project)
                     <div>
-                        <h3>{{ $project->name }}</h3>
+                        <h3>{{ $project->nama }}</h3>
                         <p>{!! $project->value ?? $project->content ?? '' !!}</p>
                     </div>
                 @empty
@@ -96,19 +96,17 @@
             </h2>
 
             <div>
-                @if(isset($texts['email']))
-                    <p>Email : {{ $texts['email'] }}</p>
+                @if(isset($user['email']))
+                    <p>Email : {{ $user['email'] }}</p>
                 @else
                     <p>Email : {{ $texts['sidebar_email'] ?? '' }}</p>
                 @endif
 
-                @if(isset($texts['phone']))
-                    <p>WhatsApp : {{ $texts['phone'] }}</p>
+                @if($sosmed->isNotEmpty())
+                    <p>Instagram : {{ $sosmed->first()->name }}</p>
                 @else
-                    <p>WhatsApp : {{ $texts['sidebar_phone'] ?? '-' }}</p>
+                    <p>Instagram : {{ $texts['sidebar_instagram'] ?? '-' }}</p>
                 @endif
-
-                <p>GitHub : {{ $texts['sidebar_github'] ?? ($socials->first()?->value ?? '') }}</p>
             </div>
 
         </div>

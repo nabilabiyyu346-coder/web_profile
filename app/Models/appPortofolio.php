@@ -15,4 +15,9 @@ class appPortofolio extends Model
         'nama',
         'gambar',
     ];
+
+        public function kategori()
+    {
+        return $this->belongsTo(appPortofolioKategori::class, 'id_kategori');
+    }
 }
