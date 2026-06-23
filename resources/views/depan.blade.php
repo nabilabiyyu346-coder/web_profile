@@ -1,5 +1,8 @@
 @php
 $site_name = getSettingValue('site_title');
+$jumbotron = getSectionData('profile');
+$location = getSettingValue('location');
+$site_desc = getSettingValue('site_description');
 @endphp
 
 <!DOCTYPE html>
@@ -9,7 +12,7 @@ $site_name = getSettingValue('site_title');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>{{ $site_name }}</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -24,14 +27,14 @@ $site_name = getSettingValue('site_title');
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand" href="#page-top">{{ $site_name }}</a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#partner">Partner</a></li>
+            {{-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#partner">Partner</a></li> --}}
             <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
             <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#profile">Profile</a></li>
           </ul>
@@ -44,7 +47,7 @@ $site_name = getSettingValue('site_title');
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
         <!-- Masthead Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+        <h1 class="masthead-heading text-uppercase mb-0">{{$jumbotron->title}}</h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
@@ -52,10 +55,10 @@ $site_name = getSettingValue('site_title');
           <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+        <p class="masthead-subheading font-weight-light mb-0">{!! strip_tags($jumbotron->content) !!}</p>
       </div>
     </header>
-    <!-- Partner Section-->
+    {{-- <!-- Partner Section-->
     <section class="page-section portfolio" id="partner">
       <div class="container">
         <!-- Partner Section Heading-->
@@ -80,7 +83,7 @@ $site_name = getSettingValue('site_title');
           <!-- last partner 1-->
         </div>
       </div>
-    </section>
+    </section> --}}
     <!-- About Section-->
     <section class="page-section bg-primary text-white mb-0" id="about">
       <div class="container">
@@ -108,11 +111,9 @@ $site_name = getSettingValue('site_title');
         <div class="row">
           <!-- Footer Location-->
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Location</h4>
+            <h4 class="text-uppercase mb-4">Address</h4>
             <p class="lead mb-0">
-              2215 John Daniel Drive
-              <br />
-              Clark, MO 65243
+              {{$location}}
             </p>
           </div>
           <!-- Footer Social Icons-->
@@ -125,10 +126,9 @@ $site_name = getSettingValue('site_title');
           </div>
           <!-- Footer About Text-->
           <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4">About Freelancer</h4>
+            <h4 class="text-uppercase mb-4">About This Site</h4>
             <p class="lead mb-0">
-              Freelance is a free to use, MIT licensed Bootstrap theme created by
-              <a href="http://startbootstrap.com">Start Bootstrap</a>
+              {{$site_desc}}
               .
             </p>
           </div>
@@ -137,7 +137,7 @@ $site_name = getSettingValue('site_title');
     </footer>
     <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white">
-      <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+      <div class="container"><small>Copyright &copy; {{ $site_name }} 2026</small></div>
     </div>
     <!-- Partner Modals-->
     <!-- Partner Modal 1-->

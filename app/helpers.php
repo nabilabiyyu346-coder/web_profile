@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Section;
 use App\Models\Setting;
 
 function getSettingValue($key)
@@ -11,3 +12,13 @@ function getSettingValue($key)
         return 'empty';
     }
 } 
+
+function getSectionData($key)
+{
+    $data = Section::where('post_as', $key)->first();
+    if(isset($data)) {
+        return $data;
+    }else{
+        return 'empty';
+    }
+}
