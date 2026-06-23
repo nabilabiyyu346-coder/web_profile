@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('app_sosial_media', function(Blueprint $table) {
             $table->id();
-            $table->string('icon', 50)->unique();
-            $table->string('link', 150)->unique();
-            $table->integer('flag');
+            $table->string('name', 50)->unique();
+            $table->string('link', 150)->nullable()->unique();
+            $table->integer('flag')->nullable()->unique();
             $table->timestamps();
         });
     }

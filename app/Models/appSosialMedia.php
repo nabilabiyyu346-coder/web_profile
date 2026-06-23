@@ -12,6 +12,7 @@ class appSosialMedia extends Model
     // boleh diisi pakai create() atau save()
     protected $fillable = [
         'name',
-        'url',
+        'link',
+        'flag'
     ];
 }

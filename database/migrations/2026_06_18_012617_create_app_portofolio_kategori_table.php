@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('app_portofolio_kategori', function(Blueprint $table) {
             $table->id();
-            $table->string('nama_kategori', 150);
-            $table->integer('flag');
+            $table->string('nama_kategori', 150)->nullable();
+            $table->integer('flag')->nullable();
             $table->timestamps();
         });
     }

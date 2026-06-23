@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('app_teks', function(Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->string('type', 255)->unique();
-            $table->text('value');
+            $table->string('content', 255)->unique();
+            $table->text('value')->nullable();
             $table->timestamps();
         });
     }

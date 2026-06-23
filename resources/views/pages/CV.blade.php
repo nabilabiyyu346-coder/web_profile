@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-
+    <title>{{ $texts['sidebar_name'] ?? 'My Profile' }}</title>
 </head>
 <body>
 
@@ -12,57 +11,34 @@
     <section>
         <div>
 
-            <img src="{{ asset('images/profile.jpg') }}" alt="Profile">
+            @php $img = $images->first()?->value ?? null; @endphp
+            <img src="{{ asset($img ?: 'images/pfp.jpg') }}" alt="Profile">
 
             <h1>
-                Nabil Abiyyu Amru Ramadhan
+                {{ $texts['hero_name'] ?? $user->name ?? 'Nama Saya' }}
             </h1>
 
             <h2>
-                Data Pribadi
+                {{ $texts['sidebar_role'] ?? $role->name ?? 'Peran Saya' }}
             </h2>
 
-            <p> 
-                Tempat Tanggal Lahir: Ponorogo, 17 September 2008
-
+            <p>
+                {{ $texts['hero_role'] ?? 'STUDENT || WEB DEVELOPER' }}
             </p>
 
             <p>
-                Web Developer || Student
-            </p>
-
-            <p>
-                Saya adalah seorang developer yang memiliki minat dalam
-                pengembangan website menggunakan Laravel, PHP, dan MySQL.
+                {!! $texts['about_information'] ?? ($texts['about'] ?? 'Saya adalah seorang pelajar yang sedang mengembangkan keterampilan dalam pengembangan web.') !!}
             </p>
 
             <div>
                 <a href="#contact">
-                    Hubungi Saya
+                    {{ $texts['button_text_me'] ?? 'Hubungi Saya' }}
                 </a>
-<br>
+                <br>
                 <a href="#project">
-                    Lihat Project
+                    {{ $texts['button_view_portfolio'] ?? 'Lihat Project' }}
                 </a>
             </div>
-
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section>
-        <div>
-
-            <h2>
-                Tentang Saya
-            </h2>
-
-            <p>
-                Saya memiliki ketertarikan dalam pengembangan aplikasi web,
-                khususnya menggunakan Laravel Framework. Saat ini saya terus
-                mempelajari backend development, database management,
-                serta UI/UX dasar.
-            </p>
 
         </div>
     </section>
@@ -72,31 +48,18 @@
         <div>
 
             <h2>
-                Pendidikan
+                {{ $texts['education_title'] ?? $experiences->firstWhere('name', 'education')?->content ?? 'Pendidikan' }}
             </h2>
 
             <div>
-
-                <div>
-                    <h3>
-                        SMKN 1 Jenangan
-                    </h3>
-
-                    <p>
-                        2024 - Sekarang
-                    </p>
-                </div>
-
-                <div>
-                    <h3>
-                        SMPN 1 Ponorogo
-                    </h3>
-
-                    <p>
-                        2021 - 2024
-                    </p>
-                </div>
-
+                @forelse($education as $edu)
+                    <div>
+                        <h3>{{ $edu->name }}</h3>
+                        <p>{{ $edu->value }}</p>
+                    </div>
+                @empty
+                    <p>Tidak ada data pendidikan.</p>
+                @endforelse
             </div>
 
         </div>
@@ -107,39 +70,45 @@
         <div>
 
             <h2>
-                Pengalaman
+                {{ $texts['portofolio_title'] ?? $portofolio->firstWhere('name', 'portofolio')?->content ?? 'Portofolio' }}
             </h2>
 
             <div>
-
-                <div>
-                    <h3>
-                        Juara 1 Lomba Scratch Tingkat Sekolah.
-                    </h3>
-
-                    <p>
-                        Perlombaan pemrograman menggunakan Scratch
-                        yang diadakan oleh Universitas Negeri Malang.
-                    </p>
-                </div>
-
+                @forelse($portofolio as $project)
+                    <div>
+                        <h3>{{ $project->name }}</h3>
+                        <p>{!! $project->value ?? $project->content ?? '' !!}</p>
+                    </div>
+                @empty
+                    <p>Tidak ada project.</p>
+                @endforelse
             </div>
 
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section>
+    <section id="contact">
         <div>
 
             <h2>
-                Kontak
+                {{ $texts['contact_title'] ?? 'Kontak' }}
             </h2>
 
             <div>
-                <p>Email : amru8763@gmail.com</p>
-                <p>WhatsApp : 085147425827</p>
-                <p>GitHub : github.com/nabilabiyyu365-coder</p>
+                @if(isset($texts['email']))
+                    <p>Email : {{ $texts['email'] }}</p>
+                @else
+                    <p>Email : {{ $texts['sidebar_email'] ?? '' }}</p>
+                @endif
+
+                @if(isset($texts['phone']))
+                    <p>WhatsApp : {{ $texts['phone'] }}</p>
+                @else
+                    <p>WhatsApp : {{ $texts['sidebar_phone'] ?? '-' }}</p>
+                @endif
+
+                <p>GitHub : {{ $texts['sidebar_github'] ?? ($socials->first()?->value ?? '') }}</p>
             </div>
 
         </div>

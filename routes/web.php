@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CvController;
 
-Route::get('/', function () {
-    return view('pages.CV');
-});
+Route::get('/Curiculum-Vitae', [CvController::class, 'index']);

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 250);
             $table->text('keterangan')->nullable();
-            $table->text('nilai');
+            $table->text('url')->nullable();
             $table->timestamps();
         });
     }
