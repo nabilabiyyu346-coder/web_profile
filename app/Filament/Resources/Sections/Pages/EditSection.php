@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Sections\Pages;
 
-use App\Models\Section;
 use App\Filament\Resources\Sections\SectionResource;
+use App\Models\Section;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
-use Illuminate\Support\Facades\Storage;
 
 class EditSection extends EditRecord
 {
@@ -16,12 +15,12 @@ class EditSection extends EditRecord
     {
         return [
             DeleteAction::make()->after(
-                function (Section $record) {
+                function(Section $record) {
                     if ($record->thumbnail) {
-                        Storage::disk('public')->delete($record->thumbnail);
+                        \Storage::disk('public')->delete($record->thumbnail);
                     }
                 }
-            ), 
+            ),
         ];
     }
 }

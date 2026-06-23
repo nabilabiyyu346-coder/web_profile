@@ -9,7 +9,6 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\Storage;
 
 class SectionsTable
 {
@@ -20,7 +19,7 @@ class SectionsTable
                 TextColumn::make('title')
                     ->searchable(),
                 ImageColumn::make('thumbnail')
-                    ->searchable()->visibility('public'),
+                    ->searchable(),
                 TextColumn::make('post_as')
                     ->badge(),
                 TextColumn::make('created_at')
@@ -41,10 +40,10 @@ class SectionsTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make()->after(
-                        function(Collection $records) {
+                        function(Collection $records){
                             foreach ($records as $key => $value) {
                                 if ($value->thumbnail) {
-                                    Storage::disk('public')->delete($value->thumbnail);
+                                    \Storage::disk('public')->delete($value->thumbnail);
                                 }
                             }
                         }

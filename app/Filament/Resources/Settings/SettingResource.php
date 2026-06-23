@@ -2,13 +2,14 @@
 
 namespace App\Filament\Resources\Settings;
 
+use Filament\Forms\Components\TextInput;
 use App\Filament\Resources\Settings\Pages\ManageSettings;
 use App\Models\Setting;
 use BackedEnum;
-use Filament\Actions\BulkActionGroup;
+// use Filament\Actions\BulkActionGroup;
+// use Filament\Actions\DeleteAction;
+// use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -33,34 +34,34 @@ class SettingResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('label')->searchable(),
-                TextColumn::make('value')->searchable(),
+                TextColumn::make('label')
+                    ->searchable(),
+                TextColumn::make('value')
+                    ->searchable()->limit(50)
             ])
             ->filters([
                 //
             ])
             ->recordActions([
-                EditAction::make()->form(function(setting $record) {
-                    switch($record->type) {
-                        case 'text':
-                            return [
-                                TextInput::make('value')->label($record->label),
-                            ];
-                            break;
-
-                        case 'longtext':
-                            return [
-                                RichEditor::make('value')->label($record->label),
-                            ];
-                            break;
+                EditAction::make()->form(
+                    function(Setting $record) {
+                        switch ($record->type) {
+                            case 'text':
+                                return [
+                                    TextInput::make('value')
+                                        ->label($record->label)
+                                        ->required(),
+                                ];
+                            
+                        }
                     }
-                }),
+                ),
                 // DeleteAction::make(),
             ])
             ->toolbarActions([
-                BulkActionGroup::make([
+                // BulkActionGroup::make([
                 //     DeleteBulkAction::make(),
-                 ]),
+                // ]),
             ]);
     }
 

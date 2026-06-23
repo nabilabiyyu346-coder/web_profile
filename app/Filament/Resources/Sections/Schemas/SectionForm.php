@@ -5,7 +5,6 @@ namespace App\Filament\Resources\Sections\Schemas;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-//use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -17,12 +16,13 @@ class SectionForm
             ->components([
                 TextInput::make('title')
                     ->required(),
-                FileUpload::make('thumbnail')->disk('public'),
+                FileUpload::make('thumbnail')
+                    ->required()->image()->disk('public'),
                 RichEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
                 Select::make('post_as')
-                    ->options(['profile' => 'Profile', 'about' => 'About', 'contact' => 'Contact']),
+                    ->options(['profile' => 'Profile', 'abbout' => 'Abbout']),
             ]);
     }
 }
