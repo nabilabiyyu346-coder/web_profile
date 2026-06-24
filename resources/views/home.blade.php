@@ -7,6 +7,7 @@
     $github = get_setting_value('github');
     $site_description = get_setting_value('site_description');
     $about = get_section_data('abbout');
+    $portofolio = get_portofolio();
 @endphp
 
 <!DOCTYPE html>
@@ -39,8 +40,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#partner">Portofolio</a></li>
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#profile">Profile</a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About Me</a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#profile">My Contact</a></li>
           </ul>
         </div>
       </div>
@@ -49,7 +50,7 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" src="{{ Storage::url($jumbotron->thumbnail) }}" alt="..." />
+        <img class="masthead-avatar mb-5 rounded-circle" src="{{ Storage::url($jumbotron->thumbnail) }}" alt="..." />
         <!-- Masthead Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">{{$jumbotron->title}}</h1>
         <!-- Icon Divider-->
@@ -66,7 +67,7 @@
     <section class="page-section portfolio" id="partner">
       <div class="container">
         <!-- Partner Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Partner</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portofolio</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
           <div class="divider-custom-line"></div>
@@ -75,16 +76,26 @@
         </div>
         <!-- Partner Grid Items-->
         <div class="row justify-content-center">
-          <!-- Partner Item 1-->
+          @php
+              $i = 1;
+          @endphp
+          @foreach ($portofolio as $item)
+          <!-- Partner Item -->
           <div class="col-md-6 col-lg-4 mb-5">
-            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+            <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal{{ $i }}">
               <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
               </div>
-              <img class="img-fluid" src="assets/img/partner/cabin.png" alt="..." />
+              <img class="img-fluid border" src="{{ Storage::url($item->thumbnail) }}" alt="..." />
             </div>
           </div>
-          <!-- last partner 1-->
+
+          @php
+              $i++;
+          @endphp
+          <!-- last partner -->
+          @endforeach
+          
         </div>
       </div>
     </section>
@@ -92,7 +103,7 @@
     <section class="page-section bg-primary text-white mb-0" id="about">
       <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-white">About Me</h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
@@ -150,8 +161,13 @@
       <div class="container"><small>Copyright &copy; {{ $site_name }} 2026</small></div>
     </div>
     <!-- Partner Modals-->
-    <!-- Partner Modal 1-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+    @php
+    $i = 1;
+    @endphp
+
+    @foreach ($portofolio as $item)
+  <!-- Partner Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ $i }}" tabindex="-1" aria-labelledby="portfolioModal{{ $i }}" aria-hidden="true">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
@@ -160,7 +176,7 @@
               <div class="row justify-content-center">
                 <div class="col-lg-8">
                   <!-- Partner Modal - Title-->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{$item->title}}</h2>
                   <!-- Icon Divider-->
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -168,9 +184,9 @@
                     <div class="divider-custom-line"></div>
                   </div>
                   <!-- Partner Modal - Image-->
-                  <img class="img-fluid rounded mb-5" src="assets/img/partner/cabin.png" alt="..." />
+                  <img class="img-fluid rounded mb-5" src="{{ Storage::url($item->thumbnail) }}" alt="..." />
                   <!-- Partner Modal - Text-->
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                  {!! $item->content !!}
                   <button class="btn btn-primary" data-bs-dismiss="modal">
                     <i class="fas fa-xmark fa-fw"></i>
                     Close Window
@@ -182,6 +198,12 @@
         </div>
       </div>
     </div>
+
+    @php
+        $i++;
+    @endphp
+    @endforeach
+    
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

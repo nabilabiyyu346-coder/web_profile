@@ -16,6 +16,7 @@ class PortofolioForm
                 TextInput::make('title')
                     ->required(),
                 FileUpload::make('thumbnail')
+                    ->disk('public')
                     ->required(),
                 RichEditor::make('content')
                     ->required()

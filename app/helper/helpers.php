@@ -22,6 +22,7 @@ function get_section_data($key){
     }
 }
 
-function get_portofolio() {
-    return Portofolio::all();
+function get_portofolio(){
+    $data = Portofolio::all();
+    return $data;
 }
