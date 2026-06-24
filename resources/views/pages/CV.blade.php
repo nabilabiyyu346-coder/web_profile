@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $texts['sidebar_name'] ?? 'My Profile' }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Times New Roman', sans;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: #db1832;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            line-height: 1.6;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #db1832;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-
+    <!-- PROFILE -->
+    <aside>
+        <div>
+             @php $img = $images->first()?->value ?? null; @endphp
+            <img src="{{ asset($img ?: 'images/pfp.jpg') }}" alt="Profile" class="profile-image">
+        </div>
+    </aside>
     <!-- HERO -->
     <section>
-        <div>
-
-            @php $img = $images->first()?->value ?? null; @endphp
-            <img src="{{ asset($img ?: 'images/pfp.jpg') }}" alt="Profile">
-
+        <div class="hero">
             <h1>
                 {{ $texts['hero_name'] ?? $user->name ?? 'Nama Saya' }}
             </h1>
