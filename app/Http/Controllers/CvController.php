@@ -16,7 +16,6 @@ class CvController extends Controller
 {
     public function index()
     {
-        // ambil semua data yang dibutuhin halaman CV
         $user = User::first();
         $experiences = appExperience::all();
         $keterampilan = appKeterampilan::all();
@@ -26,7 +25,6 @@ class CvController extends Controller
         $images = appImage::all();
         $sosmed = appSosialMedia::all();
 
-        // kirim semua data ke view pages.CV
         return view('pages.CV', [
             'experiences' => $experiences,
             'keterampilan' => $keterampilan,
