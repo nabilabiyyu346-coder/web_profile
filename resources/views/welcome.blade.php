@@ -20,12 +20,41 @@
         <p class="text-blue-400 text-lg max-w-xl mb-2">Testing Website Portofolio</p>
         <h2 class="text-black text-2xl ">SMKN 1 Jenangan Ponorogo</h2>
     </header>
-    <section id="portfolio" class="py-20 max-w-6xl mx-auto px-6 border-t border-black">
+    <section 
+    id="portfolio" 
+    class="py-20 max-w-6xl mx-auto px-6 border-t border-black" 
+    x-data="{ openModal: false, modalTitle: '', modalDesc: '' }">
         <h2 class="text-3xl font-bold mb-12 text-center text-black">Portofolio</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        @foreach($portofolios as $portofolio)
-        <div class=""></div>
-    </section>
+        @foreach($portfolios as $portfolio)
+        <div class="bg-blue-500 border border-blue-900 rounded-xl">
+            <div class="p-6">
+                <span class="text-xs text-white font-bold bg-blue-600 px-2 py-1 rounded uppercase">Portofolio</span>
+                <h3 class="text-xl font-bold mt-4 mb-2 text-white">{{ $portfolio->judul ?? $portfolio->nama ?? 'Tanpa Judul' }}</h3>
+                <p class="text-white text-sm line-clamp-3 mb-6">{{ $portfolio->deskripsi ?? $portfolio->kilasan ?? $portfolio->description ?? '' }}</p>
+                <button @click="openModal = true;
+                    modalTitle = @js($portfolio->judul ?? $portfolio->nama ?? 'Detail'); 
+                    modalDesc = @js($portfolio->deskripsi ?? $portfolio->kilasan ?? $portfolio->description ?? '');" 
+                    class="text-sm font-semibold text-white hover:underline cursor-pointer">Baca Selengkapnya
+                </button>
+            </div>
+        </div>
+        @endforeach
+        </div>
+        <div x-show="openModal"
+        class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+        x-transition
+        x-cloak>
+        <div class="bg-white p-6 rounded-2xl max-w-lg w-full shadow-2xl relative" @click.away="openModal = false">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900" x-text="modalTitle"></h2>
+            <div class="text-gray-600 text-sm overflow-y-auto max-h-60 mb-6 whitespace-pre-line" x-text="modalDesc"></div>
+            <div class="flex justify-end">
+                <button @click="openModal = false" class="bg-gray-900 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-gray-800 transition cursor-pointer">Tutup</button>
+            </div>
+        </div>
+        </div>
+</section>
+
   </body>
   </html>
   
