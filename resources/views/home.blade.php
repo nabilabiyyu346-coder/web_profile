@@ -8,6 +8,7 @@
     $site_description = get_setting_value('site_description');
     $about = get_section_data('abbout');
     $portofolio = get_portofolio();
+    $cv = get_setting_value('cv');
 @endphp
 
 <!DOCTYPE html>
@@ -147,10 +148,11 @@
             </div>
           <!-- Footer About Text-->
           <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4">About This Site</h4>
+            <h4 class="text-uppercase mb-4">MY CV</h4>
             <p class="lead mb-0">
-              {{$site_description}}
-              .
+                <a class="text-light mb-2" href="{{ Storage::url($cv) }}" target="_blank">
+                  <i class="fas fa-file-pdf me-2"></i> Download CV
+                </a>
             </p>
           </div>
         </div>

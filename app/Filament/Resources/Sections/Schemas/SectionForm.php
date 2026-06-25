@@ -17,8 +17,10 @@ class SectionForm
                 TextInput::make('title')
                     ->required(),
                 FileUpload::make('thumbnail')
-                    ->required()->image()
-                    ->disk('public'),
+                    ->required()
+                    ->image()
+                    ->disk('public')
+                    ->directory('section'),
                 RichEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
