@@ -11,8 +11,9 @@ class appKeterampilan extends Model
 
     // boleh diisi pakai create() atau save()
     protected $fillable = [
-        'nama_keterampilan',
-        'nilai',
+        'soft_skill',
+        'hard_skill',
+        'bahasa',
         'flag',
     ];
 }

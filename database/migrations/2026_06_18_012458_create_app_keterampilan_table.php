@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('app_keterampilan', function(Blueprint $table) {
             $table->id();
-            $table->string('nama_keterampilan', 250);
-            $table->integer('nilai');
+            $table->string('soft_skill', 250);
+            $table->string('hard_skill', 250);
+            $table->string('bahasa', 250);
             $table->integer('flag');
             $table->timestamps();
         });

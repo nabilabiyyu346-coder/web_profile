@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('app_experience', function(Blueprint $table) {
             $table->id();
             $table->string('name', 250);
-            $table->text('description')->nullable();
             $table->integer('start_year');
             $table->integer('end_year')->nullable();
             $table->timestamps();

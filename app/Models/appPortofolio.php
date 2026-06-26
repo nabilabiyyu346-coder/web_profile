@@ -13,7 +13,7 @@ class appPortofolio extends Model
     protected $fillable = [
         'id_kategori',
         'nama',
-        'gambar',
+        'year',
     ];
 
         public function kategori()
