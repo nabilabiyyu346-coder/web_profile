@@ -20,10 +20,9 @@
         <p class="text-blue-400 text-lg max-w-xl mb-2">Testing Website Portofolio</p>
         <h2 class="text-black text-2xl ">SMKN 1 Jenangan Ponorogo</h2>
     </header>
+    <div x-data="{ openModal: false, modalTitle: '', modalDesc: '' }">
     <section 
-    id="portfolio" 
-    class="py-20 max-w-6xl mx-auto px-6 border-t border-black" 
-    x-data="{ openModal: false, modalTitle: '', modalDesc: '' }">
+    id="portfolio" class="py-20 max-w-6xl mx-auto px-6 border-t border-black" >
         <h2 class="text-3xl font-bold mb-12 text-center text-black">Portofolio</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         @foreach($portfolios as $portfolio)
@@ -53,8 +52,28 @@
             </div>
         </div>
         </div>
-</section>
-
+    </section>
+    <section id="blog" class="py-20 max-w-6xl mx-auto px-6 border-t border-gray-900">
+    <h2 class="text-3xl font-bold mb-12 text-center text-black">Blog</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        @foreach($blogs as $blog)
+        <div class="bg-blue-500 rounded-xl border border-blue-900">
+            <div class="p-6">
+                <span class="text-xs text-white font-bold bg-blue-600 px-2 py-1 rounded uppercase">Blog</span>
+                <h3 class="text-xl font-bold mt-4 mb-2 text-white">{{ $blog->title }}</h3>
+                <p class="text-white text-sm line-clamp-3 mb-6">Diposting pada: {{ $blog->created_at ?? '-' }}</p>
+                <button 
+                    @click="
+                        openModal = true; 
+                        modalTitle = @js($blog->title); 
+                        modalDesc = @js($blog->content);" 
+                    class="text-sm font-semibold text-white hover:underline cursor-pointer">Baca Artikel </button>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    </section>
+    </div>
   </body>
   </html>
   
