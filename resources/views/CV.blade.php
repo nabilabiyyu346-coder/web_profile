@@ -9,10 +9,7 @@
     <navbar class="fixed top-0 right-0 left-0 px-8 py-7 flex justify-between items-center rounded-b-lg bg-white shadow-sm text-slate-800">
         <span class="text-xl font-bold tracking-6wider">Iqbal.CV</span>
         <div class="text-lg font-bold space-x-7 ">
-            <a href="" class="hover:text-blue-700 transition">Tentang</a>
-            <a href="" class="hover:text-blue-400 transition">Contact</a>
-            <a href="" class="hover:text-blue-400 transition">Keahlian</a>
-            <a href="" class="hover:text-blue-400 transition">Prestasi</a>
+            <a href="/" class="hover:text-blue-400 transition">Portofolio & Blog</a>
         </div>
     </navbar>
     <header class="pt-28 px-2 pb-8 md:pb-16 max-w-5xl mx-auto text-center md:text-left md:flex md:items-center md:gap-12">
@@ -85,9 +82,7 @@
     </main>
     <footer class="mt-12 py-6 text-center w-full bg-white border-t border-slate-300 rounded-t-xl text-slate-800">        
         <div class="flex justify-center gap-6 text-sm md:text-base">
-            <a href="" class="hover:underline flex items-center gap-1">Whatsapp</a>
-            <a href="" class="hover:underline flex items-center gap-1">Gmail</a>
-            <a href="" class="hover:underline flex items-center gap-1">Alamat</a>
+            <a href="/" class="hover:underline flex items-center gap-1">Portofolio & Blog</a>
         </div>
     </footer>
   </body>

@@ -10,7 +10,7 @@
     <navbar class="fixed top-0 left-0 w-full bg-blue-500 border-b border-black z-50 px-8 py-4 flex justify-between items-center">
         <span class="text-xl font-bold">TES</span>
         <div class="space-x-10 text-sm">
-            <a href="" class="hover:text-white hover:underline transition">TES1</a>
+            <a href="/CV" class="hover:text-white hover:underline transition">CV Iqbal</a>
             <a href="" class="hover:text-white hover:underline transition">TES2</a>
             <a href="" class="hover:text-white hover:underline transition">TES3</a>
         </div>
@@ -74,6 +74,13 @@
     </div>
     </section>
     </div>
+    <footer class="mt-12 py-6 text-center w-full bg-blue-500 border-t border-black text-slate-800">        
+        <div class="flex justify-center gap-6 text-sm md:text-base">
+            <a href="" class="hover:text-white hover:underline transition">TES1</a>
+            <a href="" class="hover:text-white hover:underline transition">TES2</a>
+            <a href="" class="hover:text-white hover:underline transition">TES3</a>
+        </div>
+    </footer>
   </body>
   </html>
   
