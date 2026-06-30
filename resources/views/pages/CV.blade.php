@@ -90,7 +90,6 @@
     }
     .foto-circle img { width: 100%; height: 100%; object-fit: cover; }
     .foto-placeholder { font-size: 11px; color: #aaa; }
-    .foto-toggle { display: flex; gap: 5px; font-size: 12px; color: #aaa; }
 
     .field-label {
       font-size: 9px;
@@ -176,8 +175,6 @@
         <div class="foto-circle">
           <span class="foto-placeholder">Foto</span>
         </div>
-        <div class="foto-toggle">
-          {{ $texts['cell_role'] ?? 'Ganti Foto' }}
       </div>
       <div class="cell">
         <div class="field-label">Nama</div>
@@ -236,10 +233,6 @@
       <div class="cell">
         <div class="skill-title">Hard Skill</div>
         <div class="skill-item">{{ $texts['cell_hard_skills'] ?? $keterampilan->hard_skill ?? 'Hard Skills' }}</div>
-      </div>
-      <div class="cell">
-        <div class="skill-title">Hobbies</div>
-        <div class="skill-item">{{ $texts['cell_hobbies'] ?? $user->hobby ?? 'Hobbies' }}</div>
       </div>
       <div class="cell" style="border-right:none">
         <div class="skill-title">Bahasa ?</div>
