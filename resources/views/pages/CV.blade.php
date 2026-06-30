@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - Nabil Abiyyu Amru Ramadhan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --accent: #659287; }
 
     body {
-      font-family: 'Poppins', system-ui, sans-serif;
+      font-family: 'Arial', system-ui, sans-serif;
       background: #f5f5f5;
       color: #1a1a1a;
     }
@@ -249,7 +249,7 @@
 
     <div class="row grid4">
       <div class="cell" style="border-right:none">
-        <div class="year-txt">{{ $texts['cell_portofolio_year'] ?? $portofolio->year ?? 'Portofolio's Year' }}</div>
+        <div class="year-txt">{{ $texts['cell_portofolio_year'] ?? $portofolio->year ?? 'Portofolio Year' }}</div>
       </div>
       <div class="cell" style="grid-column:span 2">
         <div class="section-label">Experience</div>
