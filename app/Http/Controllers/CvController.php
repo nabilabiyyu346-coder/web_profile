@@ -17,13 +17,13 @@ class CvController extends Controller
     public function index()
     {
         $user = User::first();
-        $experiences = appExperience::all();
-        $keterampilan = appKeterampilan::all();
-        $portofolio = appPortofolio::with('kategori')->get();
-        $portofolioKategori = appPortofolioKategori::all();
-        $teks = appTeks::all();
-        $images = appImage::all();
-        $sosmed = appSosialMedia::all();
+        $experiences = appExperience::first();
+        $keterampilan = appKeterampilan::first();
+        $portofolio = appPortofolio::with('kategori')->first();
+        $portofolioKategori = appPortofolioKategori::first();
+        $teks = appTeks::first();
+        $images = appImage::first();
+        $sosmed = appSosialMedia::first();
 
         return view('pages.CV', [
             'experiences' => $experiences,

@@ -38,17 +38,6 @@
     
     .page { max-width: 860px; margin: 24px auto; padding: 0 16px; }
 
-    .welcome {
-      background: #fff;
-      border: 0.5px solid #ddd;
-      border-radius: 10px 10px 0 0;
-      padding: 14px 20px;
-      font-size: 13px;
-      font-weight: 500;
-      border-bottom: none;
-    }
-    .welcome span { color: var(--accent); }
-
     
     .cv-card {
       background: #fff;
@@ -101,7 +90,7 @@
     .field-val { font-size: 12px; color: #1a1a1a; }
     .arrow { font-size: 10px; color: var(--accent); }
 
-
+    /*tl: tag-line */
     .section-label {
       font-size: 9px;
       color: #999;
@@ -211,13 +200,13 @@
 
     <div class="row grid4">
       <div class="cell" style="border-right:none">
-        <div class="year-txt">{{$texts['year_experience'] ?? $experience->start_year . ' - ' . $experience->end_year ?? 'Year'}}</div>
+        <div class="year-txt">{{$texts['year_experience'] ?? $experiences->start_year . ' - ' . $experiences->end_year ?? 'Year'}}</div>
       </div>
       <div class="cell" style="grid-column:span 2">
         <div class="section-label">Sekolah</div>
         <div class="tl-row">
           <div class="tl-dot"></div>
-          <div><div class="tl-text">{{ $texts['cell_experiences'] ?? b ?? 'Nama Sekolah' }}</div><div class="tl-sub">Rekayasa Perangkat Lunak</div></div>
+          <div><div class="tl-text">{{ $texts['cell_experiences'] ?? $experiences->name ?? 'Nama Sekolah' }}</div><div class="tl-sub">Rekayasa Perangkat Lunak</div></div>
         </div>
       </div>
       <div class="cell" style="border-right:none">
@@ -235,11 +224,12 @@
         <div class="skill-item">{{ $texts['cell_hard_skills'] ?? $keterampilan->hard_skill ?? 'Hard Skills' }}</div>
       </div>
       <div class="cell" style="border-right:none">
-        <div class="skill-title">Bahasa ?</div>
+        <div class="skill-title">Bahasa</div>
         <div class="skill-item">{{ $texts['cell_bahasa'] ?? $keterampilan->bahasa ?? 'Bahasa' }}</div>
       </div>
     </div>
 
+    
     <div class="row grid4">
       <div class="cell" style="border-right:none">
         <div class="year-txt">{{ $texts['cell_portofolio_year'] ?? $portofolio->year ?? 'Portofolio Year' }}</div>
