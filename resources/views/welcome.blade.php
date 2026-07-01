@@ -11,8 +11,8 @@
         <span class="text-xl font-bold">TES</span>
         <div class="space-x-10 text-sm">
             <a href="/CV" class="hover:text-white hover:underline transition">CV Iqbal</a>
-            <a href="" class="hover:text-white hover:underline transition">TES2</a>
-            <a href="" class="hover:text-white hover:underline transition">TES3</a>
+            <a href="/login" class="hover:text-white hover:underline transition">Login</a>
+            <a href="/register" class="hover:text-white hover:underline transition">Register</a>
         </div>
     </navbar>
     <header id="about" class="h-screen flex flex-col justify-center items-center text-center px-80">
