@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'username', 'password'])]
+#[Fillable(['name', 'username', 'password', 'role_id'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
+    use HasUuids;
+    public $timestamps = false;
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 

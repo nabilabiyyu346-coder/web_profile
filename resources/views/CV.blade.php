@@ -28,15 +28,15 @@
             <h2 class="text-xl font-bold text-center mb-4 tracking-wide">PENDIDIKAN</h2>
             <div class="space-y-3 text-sm md:text-base">
                 <div class="border-b border-blue-400 pb-2">
-                    <p class="font-semibold">SD Ma'arif Ponorogo</p>
+                    <a href="https://maarifponorogo.sch.id" class="font-semibold hover:underline">SD Ma'arif Ponorogo</a>
                     <p class="text-blue-200 text-xs">2015 - 2021</p>
                 </div>
                 <div class="border-b border-blue-400 pb-2">
-                    <p class="font-semibold">MTsN 2 Ponorogo</p>
+                    <a href="https://mtsn2ponorogo.sch.id" class="font-semibold hover:underline">MTsN 2 Ponorogo</a>
                     <p class="text-blue-200 text-xs">2021 - 2024</p>
                 </div>
                 <div>
-                    <p class="font-semibold">SMKN 1 Jenangan Ponorogo</p>
+                    <a href="https://learning.smkn1jenpo.sch.id" class="font-semibold hover:underline">SMKN 1 Jenangan Ponorogo</a>
                     <p class="text-blue-200 text-xs">Jurusan RPL (2024 - Sekarang)</p>
                 </div>
             </div>
